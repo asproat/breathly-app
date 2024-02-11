@@ -104,6 +104,7 @@ export const SettingsRootScreen: FC<
                 options={[
                   { value: "light", label: "Light theme" },
                   { value: "dark", label: "Dark theme" },
+                  { value: "third", label: "third theme" },
                 ]}
                 value={theme}
                 onValueChange={setTheme}
