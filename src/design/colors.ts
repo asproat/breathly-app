@@ -15,6 +15,10 @@ export const colors = {
   "blue-500": tailwindColors.blue[500], // iOS settings tint
   pastel: {
     orange: "#F2CAAD", // Home screen planet
+    pink: "#EEB4B4", // alt color for breathing shape
+    "blue-dark": "#0054DB",// alt color for breathing shape
+    "blue-light": "#ADD8E6",// alt color for breathing shape
+    lilac: "#D8B9FF",// alt color for breathing shape
     gray: "#E1E3DC", // Home screen planet
     green: "#ECE9B7", // Home screen planet
     "orange-light": "#F1E0D9", // Home screen button

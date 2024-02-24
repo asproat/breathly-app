@@ -39,6 +39,13 @@ export const SettingsRootScreen: FC<
   const setTheme = useSettingsStore((state) => state.setTheme);
   const vibrationEnabled = useSettingsStore((state) => state.vibrationEnabled);
   const setVibrationEnabled = useSettingsStore((state) => state.setVibrationEnabled);
+  
+//custom color for breathing shape
+  const customBreathingShapeColor = useSettingsStore((state) => state.customBreathingShapeColor);
+  const setCustomBreathingShapeColor = useSettingsStore((state) => state.setCustomBreathingShapeColor);
+  const breathingShapeColor = useSettingsStore((state) => state.breathingShapeColor);
+  const setBreathingShapeColor = useSettingsStore((state) => state.setBreathingShapeColor);
+
 
   React.useEffect(() => {
     // Use `setOptions` to update the button that we previously specified
@@ -108,6 +115,28 @@ export const SettingsRootScreen: FC<
                 value={theme}
                 onValueChange={setTheme}
               />
+            )}
+            <SettingsUI.SwitchItem //added section
+              label = "Custom breathing shape color"
+              secondaryLabel = "Change breathing shape color"
+              iconName = "ios-moon"
+              value = {customBreathingShapeColor}
+              onValueChange = {setCustomBreathingShapeColor}
+            />
+            {customBreathingShapeColor && (
+              <SettingsUI.PickerItem
+                label = "Breathing shape color"
+                iconName = "ios-color-pallette"
+                iconBackgroundColor = "#d8b4fe"
+                options = {[
+                  {value: "blue-light", label: "Light Blue"},
+                  {value: "lilac", label: "Lilac"},
+                  {value: "pink", label: "Pink"},
+                  {value: "blue-dark", label: "Dark Blue"},
+                ]}
+                value={breathingShapeColor}
+                onValueChange={setBreathingShapeColor}
+                />
             )}
           </SettingsUI.Section>
           <SettingsUI.Section label="Haptics">
