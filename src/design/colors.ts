@@ -14,9 +14,9 @@ export const colors = {
   "blue-400": tailwindColors.blue[400], // Android settings tint
   "blue-500": tailwindColors.blue[500], // iOS settings tint
   pastel: {
-    orange: "#F2CAAD", // Home screen planet
-    gray: "#E1E3DC", // Home screen planet
-    green: "#ECE9B7", // Home screen planet
+    orange: "#FF0000", // Home screen planet
+    gray: "#FF00FF", // Home screen planet
+    green: "#00FF00", // Home screen planet
     "orange-light": "#F1E0D9", // Home screen button
     "gray-light": "#E7E9E6", // Home screen button
   },
