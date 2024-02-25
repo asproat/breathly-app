@@ -24,6 +24,7 @@ interface SettingsStore {
   setTheme: (theme: "dark" | "light") => unknown;
   vibrationEnabled: boolean;
   setVibrationEnabled: (vibrationEnabled: boolean) => unknown;
+  
 
     //custom breathing color
   customBreathingShapeColor: boolean;

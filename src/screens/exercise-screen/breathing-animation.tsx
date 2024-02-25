@@ -21,7 +21,7 @@ export const BreathingAnimation: FC<Props> = ({ animationValue, color = colors.p
   // shape color
   const { customBreathingShapeColor} = useSettingsStore();
   const { breathingShapeColor} = useSettingsStore();
-  color = customBreathingShapeColor ?  colors.pastel[breathingShapeColor] : colors.pastel["blue-dark"];
+  color = customBreathingShapeColor ?  colors.pastel[breathingShapeColor] : colors.pastel.orange;
 
   const mountAnimationValue = useRef(new Animated.Value(0)).current;
   const innerOpacity = animationValue.interpolate({

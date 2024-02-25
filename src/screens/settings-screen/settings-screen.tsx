@@ -121,7 +121,7 @@ export const SettingsRootScreen: FC<
               <View style={{
                 width:25,
                 height: 25,
-                backgroundColor: customBreathingShapeColor ?  colors.pastel[breathingShapeColor] : colors.pastel["blue-dark"],
+                backgroundColor: customBreathingShapeColor ?  colors.pastel[breathingShapeColor] : colors.pastel.orange,
                 marginLeft:10,
                 marginRight:-25,
               }}
