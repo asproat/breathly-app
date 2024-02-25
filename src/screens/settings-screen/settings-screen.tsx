@@ -1,7 +1,8 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { colors } from "@breathly/design/colors";
 import ms from "ms";
 import React, { FC } from "react";
-import { Animated, ScrollView, LayoutAnimation, Button, Platform } from "react-native";
+import { Animated, ScrollView, LayoutAnimation, Button, Platform, View, StyleSheet} from "react-native";
 import { patternPresets } from "@breathly/assets/pattern-presets";
 import { SettingsStackParamList } from "@breathly/core/navigator";
 import { SettingsUI } from "@breathly/screens/settings-screen/settings-ui";
@@ -45,7 +46,6 @@ export const SettingsRootScreen: FC<
   const setCustomBreathingShapeColor = useSettingsStore((state) => state.setCustomBreathingShapeColor);
   const breathingShapeColor = useSettingsStore((state) => state.breathingShapeColor);
   const setBreathingShapeColor = useSettingsStore((state) => state.setBreathingShapeColor);
-
 
   React.useEffect(() => {
     // Use `setOptions` to update the button that we previously specified
@@ -116,13 +116,26 @@ export const SettingsRootScreen: FC<
                 onValueChange={setTheme}
               />
             )}
-            <SettingsUI.SwitchItem //added section
-              label = "Custom breathing shape color"
-              secondaryLabel = "Change breathing shape color"
-              iconName = "ios-moon"
-              value = {customBreathingShapeColor}
-              onValueChange = {setCustomBreathingShapeColor}
-            />
+
+            <View style={{flexDirection:"row", alignItems: "center"}}>
+              <View style={{
+                width:25,
+                height: 25,
+                backgroundColor: customBreathingShapeColor ?  colors.pastel[breathingShapeColor] : colors.pastel["blue-dark"],
+                marginLeft:10,
+                marginRight:-25,
+              }}
+              />
+
+              <SettingsUI.SwitchItem //added section
+                style={{marginLeft:-25}}
+                label = "Custom breathing shape color"
+                secondaryLabel = "Change breathing shape color"
+                iconName = "ios-moon"
+                value = {customBreathingShapeColor}
+                onValueChange = {setCustomBreathingShapeColor}
+              />
+            </View>
             {customBreathingShapeColor && (
               <SettingsUI.PickerItem
                 label = "Breathing shape color"
